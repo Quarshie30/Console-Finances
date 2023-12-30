@@ -1,4 +1,4 @@
-.var finances =
+var finances =
 [
   ['Jan-2010', 867884],
   ['Feb-2010', 984655],
@@ -88,8 +88,16 @@
   ['Feb-2017', 671099],
 ];
 
+const totalMonths = finances.length;
+
+console.log("The provided dataset contains financial information spanning from " + finances[0][0] + " to " + finances[finances.length - 1][0] + ".");
+console.log("The dataset includes a total of " + totalMonths + " months.");
+
 // The total number of months included in the dataset.//
 
-var totalMonths = finances.length;
+//var totalMonths = finances.length;
 
-console.log("Total number of months in the dataset: " + totalMonths);
+//console.log("Total number of months in the dataset: " + totalMonths);
+
+
+// The net total amount of Profit/Losses over the entire period.
