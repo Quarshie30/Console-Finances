@@ -21,3 +21,4 @@ The strucutre of the code calculats:
 - the net profit/loss
 - the avarage change in profit/loss
 - the month with the greatest increase/decrease
+
