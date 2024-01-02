@@ -97,6 +97,35 @@ var sum = 0;
 for (var i = 0; i < finances.length; i++) {
 sum += finances[i][1];
 }
-console.log("Net total Profit/Loss " + sum )
+console.log("Net total Profit/Loss: " + sum )
 
 //The average of the changes in Profit/Losses over the entire period.
+
+var totalChange = 0;
+for (var i = 1; i < finances.length; i++) {
+  totalChange += finances[i][1] - finances[i - 1][1];
+}
+var averageChange = totalChange / (finances.length - 1);
+
+console.log("Average change: " + averageChange);
+
+
+//Greatest Increase in profit/losses
+function findGreatestIncrease(data) {
+  let greatestIncrease = 0;
+  let increaseMonth = '';
+
+  for (let i = 1; i < data.length; i++) {
+    const increase = data[i][1] - data[i - 1][1];
+
+    if (increase > greatestIncrease) {
+      greatestIncrease = increase;
+      increaseMonth = data[i][0]; // Store the month for the greatest increase
+    }
+  }
+
+  return "The greatest increase occurred in " + increaseMonth + " with an increase of " + greatestIncrease;
+}
+
+const greatestIncreaseResult = findGreatestIncrease(finances);
+console.log(greatestIncreaseResult);
