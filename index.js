@@ -129,3 +129,23 @@ function findGreatestIncrease(data) {
 
 const greatestIncreaseResult = findGreatestIncrease(finances);
 console.log(greatestIncreaseResult);
+
+// Greatest Deecreae in profit/loss
+function findGreatestDecrease(data) {
+  let greatestDecrease = 0;
+  let decreaseMonth = '';
+
+  for (let i = 1; i < data.length; i++) {
+    const decrease = data[i][1] - data[i - 1][1];
+
+    if (decrease < greatestDecrease) {
+      greatestDecrease = decrease;
+      decreaseMonth = data[i][0]; // Store the month for the greatest decrease
+    }
+  }
+
+  return "The greatest decrease occurred in " + decreaseMonth + " with a decrease of " + greatestDecrease;
+}
+
+const greatestDecreaseResult = findGreatestDecrease(finances);
+console.log(greatestDecreaseResult);
